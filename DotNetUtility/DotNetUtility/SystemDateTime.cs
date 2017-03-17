@@ -8,36 +8,36 @@ using DotNetUtility.Attribute;
 namespace DotNetUtility
 {
     /// <summary>
+    /// タイムゾーン
+    /// </summary>
+    public enum TimeZone
+    {
+        /// <summary>
+        /// Local
+        /// </summary>
+        [CustomDisplayName("Local")]
+        Local,
+
+        /// <summary>
+        /// UTC
+        /// </summary>
+        [CustomDisplayName("UTC")]
+        Utc,
+
+        /// <summary>
+        /// Japan/Tokyo
+        /// </summary>
+        [CustomDisplayName("Tokyo Standard Time")]
+        Tokyo,
+    }
+
+    /// <summary>
     /// システム時間
     /// </summary>
     public static class SystemDateTime
     {
         /// <summary>
-        /// タイムゾーン
-        /// </summary>
-        public enum TimeZone
-        {
-            /// <summary>
-            /// Local
-            /// </summary>
-            [CustomDisplayName("Local")]
-            Local,
-
-            /// <summary>
-            /// UTC
-            /// </summary>
-            [CustomDisplayName("UTC")]
-            Utc,
-
-            /// <summary>
-            /// Japan/Tokyo
-            /// </summary>
-            [CustomDisplayName("Tokyo Standard Time")]
-            Tokyo,
-        }
-
-        /// <summary>
-        /// タイムゾーンから時刻を取得する
+        /// タイムゾーンを指定して時刻を取得する
         /// </summary>
         /// <param name="zone">タイムゾーン</param>
         /// <returns>タイムゾーンの時刻</returns>
@@ -50,6 +50,17 @@ namespace DotNetUtility
 
             TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(zone.DisplayName());
             return TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, timeZoneInfo);
+        }
+
+        /// <summary>
+        /// タイムゾーンを指定して時刻を取得する
+        /// </summary>
+        /// <param name="dt">DateTime</param>
+        /// <param name="zone">TimeZone</param>
+        /// <returns>タイムゾーンの時刻</returns>
+        public static DateTime Get(this DateTime dt, TimeZone zone)
+        {
+            return Get(zone);
         }
     }
 }
