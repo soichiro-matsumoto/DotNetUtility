@@ -32,16 +32,16 @@ namespace DotNetUtility
     }
 
     /// <summary>
-    /// システム時間
+    /// DateTime拡張
     /// </summary>
-    public static class SystemDateTime
+    public static class DateTimeExtensions
     {
         /// <summary>
         /// タイムゾーンを指定して時刻を取得する
         /// </summary>
         /// <param name="zone">タイムゾーン</param>
         /// <returns>タイムゾーンの時刻</returns>
-        public static DateTime Get(TimeZone zone)
+        public static DateTime GetNow(TimeZone zone)
         {
             if (zone == TimeZone.Local)
             {
@@ -53,14 +53,35 @@ namespace DotNetUtility
         }
 
         /// <summary>
-        /// タイムゾーンを指定して時刻を取得する
+        /// パラメータの日付を基に、年齢を算出する
+        /// </summary>
+        /// <param name="dt">生年月日</param>
+        /// <param name="now">今日日付</param>
+        /// <returns>年齢</returns>
+        public static int GetAge(this DateTime dt, DateTime now)
+        {
+            if (now.Month < dt.Month || //// 誕生月を超えていない
+                (now.Month == dt.Month && now.Day < dt.Day)) //// 誕生月であるが、誕生日を超えていない
+            {
+                return now.Year - dt.Year - 1;
+            }
+
+            return now.Year - dt.Year;
+        }
+
+        /// <summary>
+        /// DateTimeからIntに変換する
+        /// 例：2005/01/10 → 20050110
         /// </summary>
         /// <param name="dt">DateTime</param>
-        /// <param name="zone">TimeZone</param>
-        /// <returns>タイムゾーンの時刻</returns>
-        public static DateTime Get(this DateTime dt, TimeZone zone)
+        /// <returns>Int</returns>
+        public static int ToInt(this DateTime dt)
         {
-            return Get(zone);
+            int year = dt.Year * 10000;
+            int month = dt.Month * 100;
+            int day = dt.Day;
+
+            return year + month + day;
         }
     }
 }
