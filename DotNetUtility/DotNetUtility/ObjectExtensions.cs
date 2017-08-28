@@ -15,7 +15,7 @@ namespace DotNetUtility
         /// nullであるか検証する
         /// </summary>
         /// <param name="value">検証値</param>
-        public static bool IsNull(this object value)
+        public static bool IsNull<T>(this T value) 
         {
             return value == null;
         }
