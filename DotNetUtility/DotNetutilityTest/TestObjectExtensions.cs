@@ -60,6 +60,8 @@ namespace DotNetutilityTest
         {
             int @int = 100;
             int? intNull = @int.ToNullable();
+
+            Assert.AreEqual(@int, intNull);
         }
     }
 }
