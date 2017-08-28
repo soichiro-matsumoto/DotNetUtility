@@ -73,13 +73,13 @@ namespace DotNetUtility
         /// DateTimeからIntに変換する
         /// 例：2005/01/10 → 20050110
         /// </summary>
-        /// <param name="dt">DateTime</param>
+        /// <param name="value">DateTime</param>
         /// <returns>Int</returns>
-        public static int ToInt(this DateTime dt)
+        public static int ToInt(this DateTime value)
         {
-            int year = dt.Year * 10000;
-            int month = dt.Month * 100;
-            int day = dt.Day;
+            int year = value.Year * 10000;
+            int month = value.Month * 100;
+            int day = value.Day;
 
             return year + month + day;
         }
