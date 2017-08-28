@@ -49,8 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attribute\CustomDisplayNameAttribute.cs" />
-    <Compile Include="Attribute\CustomDisplayNameAttributeExtensions.cs" />
+    <Compile Include="Attribute\ExDisplayNameAttribute.cs" />
+    <Compile Include="Attribute\ExDisplayNameAttributeExtensions.cs" />
     <Compile Include="IEnumerableExtensions.cs" />
     <Compile Include="IQueryableExtensions.cs" />
     <Compile Include="ObjectExtensions.cs" />
