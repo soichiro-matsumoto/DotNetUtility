@@ -10,7 +10,7 @@ namespace DotNetutilityTest
         /// <summary>
         /// TestClass
         /// </summary>
-        class TestClass
+        class MockClass
         {
             /// <summary>
             /// String Properties
@@ -29,8 +29,8 @@ namespace DotNetutilityTest
         [TestMethod]
         public void TestIsNull()
         {
-            TestClass @object = new TestClass() { IntProp = 1, StrProp = "test" };
-            TestClass @null = null;
+            MockClass @object = new MockClass() { IntProp = 1, StrProp = "test" };
+            MockClass @null = null;
 
             Assert.IsFalse(@object.IsNull());
             Assert.IsTrue(@null.IsNull());
