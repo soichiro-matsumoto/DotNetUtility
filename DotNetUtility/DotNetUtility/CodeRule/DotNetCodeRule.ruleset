@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="Microsoft のすべての規則 のコピー" Description="この規則セットにはすべての規則が含まれます。この規則セットを実行すると、多数の警告が報告される可能性があります。この規則セットは、コード内のすべての問題を全体的に把握する場合に使用してください。これは、用途を絞った各規則セットのうち、どれがプロジェクトに対して最も適切かを判断するのに役立ちます。" ToolsVersion="14.0">
+<RuleSet Name="Microsoft のすべての規則 のコピー" Description="この規則セットにはすべての規則が含まれます。この規則セットを実行すると、多数の警告が報告される可能性があります。この規則セットは、コード内のすべての問題を全体的に把握する場合に使用してください。これは、用途を絞った各規則セットのうち、どれがプロジェクトに対して最も適切かを判断するのに役立ちます。" ToolsVersion="15.0">
   <IncludeAll Action="Warning" />
   <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
     <Rule Id="CA1000" Action="Error" />
@@ -114,7 +114,7 @@
     <Rule Id="CA1716" Action="Error" />
     <Rule Id="CA1717" Action="Error" />
     <Rule Id="CA1719" Action="Error" />
-    <Rule Id="CA1720" Action="Error" />
+    <Rule Id="CA1720" Action="None" />
     <Rule Id="CA1721" Action="Error" />
     <Rule Id="CA1722" Action="Error" />
     <Rule Id="CA1724" Action="Error" />
