@@ -12,6 +12,15 @@ namespace DotNetUtility
     public static class ObjectExtensions
     {
         /// <summary>
+        /// nullであるか検証する
+        /// </summary>
+        /// <param name="value">検証値</param>
+        public static bool IsNull(this object value)
+        {
+            return value == null;
+        }
+
+        /// <summary>
         /// Null許容型から、非Null許容型に変換する。
         /// 値がNullの場合。T のデフォルト値を返す。
         /// </summary>
@@ -53,6 +62,26 @@ namespace DotNetUtility
             where T : struct
         {
             return value;
+        }
+
+        /// <summary>
+        /// T に変換する
+        /// 変換ができない場合、T のデフォルト値を返す
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">変換前値</param>
+        public static T To<T>(this IConvertible value)
+            where T : struct
+        {
+            try
+            {
+                return (T)Convert.ChangeType(value, typeof(T));
+            }
+            catch
+            {
+                // TODO : catchしてそのままデフォルトを返すのは検討
+                return default(T);
+            }
         }
     }
 }
