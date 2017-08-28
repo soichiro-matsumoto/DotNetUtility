@@ -102,11 +102,14 @@ namespace DotNetutilityTest
 
             var not = new MockClass() { IntProp = 0, StrProp = "test" };
 
+            //// 最初の要素なので、nullを返す
             Assert.AreEqual(null, list.Prev(first));
 
+            //// 前の要素との検証
             Assert.AreEqual(first, list.Prev(second));
             Assert.AreEqual(second, list.Prev(last));
 
+            //// リストに存在しない要素なので、nullを返す
             Assert.AreEqual(null, list.Prev(not));
         }
     }
