@@ -15,19 +15,19 @@ namespace DotNetUtility
         /// <summary>
         /// Local
         /// </summary>
-        [CustomDisplayName("Local")]
+        [ExDisplayName("Local")]
         Local,
 
         /// <summary>
         /// UTC
         /// </summary>
-        [CustomDisplayName("UTC")]
+        [ExDisplayName("UTC")]
         Utc,
 
         /// <summary>
         /// Japan/Tokyo
         /// </summary>
-        [CustomDisplayName("Tokyo Standard Time")]
+        [ExDisplayName("Tokyo Standard Time")]
         Tokyo,
     }
 
