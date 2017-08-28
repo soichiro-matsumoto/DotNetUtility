@@ -51,6 +51,7 @@
     <Compile Include="TestObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestIEnumerableExtensions.cs" />
+    <Compile Include="TestExDisplayNameAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
