@@ -63,25 +63,5 @@ namespace DotNetUtility
         {
             return value;
         }
-
-        /// <summary>
-        /// T に変換する
-        /// 変換ができない場合、T のデフォルト値を返す
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="value">変換前値</param>
-        public static T To<T>(this IConvertible value)
-            where T : struct
-        {
-            try
-            {
-                return (T)Convert.ChangeType(value, typeof(T));
-            }
-            catch
-            {
-                // TODO : catchしてそのままデフォルトを返すのは検討
-                return default(T);
-            }
-        }
     }
 }
