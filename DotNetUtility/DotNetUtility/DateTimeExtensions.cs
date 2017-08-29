@@ -8,30 +8,6 @@ using DotNetUtility.Attribute;
 namespace DotNetUtility
 {
     /// <summary>
-    /// タイムゾーン
-    /// </summary>
-    public enum TimeZone
-    {
-        /// <summary>
-        /// Local
-        /// </summary>
-        [ExDisplayName("Local")]
-        Local,
-
-        /// <summary>
-        /// UTC
-        /// </summary>
-        [ExDisplayName("UTC")]
-        Utc,
-
-        /// <summary>
-        /// Japan/Tokyo
-        /// </summary>
-        [ExDisplayName("Tokyo Standard Time")]
-        Tokyo,
-    }
-
-    /// <summary>
     /// DateTime拡張
     /// </summary>
     public static class DateTimeExtensions
@@ -83,5 +59,31 @@ namespace DotNetUtility
 
             return year + month + day;
         }
+        
+        /// <summary>
+        /// 月末日を取得する
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <returns>月末日指定されたDateTime</returns>
+        public static DateTime MonthLastDay(this DateTime dt)
+        {
+            var days = DateTime.DaysInMonth(dt.Year, dt.Month);
+            return new DateTime(dt.Year, dt.Month, days);
+        }
+
+        /** 
+         * TODO : 祝日関連の実装
+         * 
+         * パラメータの日付が祝日かどうか判定するメソッド。
+         * 指定月の祝日（DateTime）の一覧を取得するメソッド。
+         * 振替休日も考慮。
+         * 
+         * 課題点：
+         *  祝日の管理方法。ハードコーディングか？ＤＢのマスタから取得するか？
+         *  ハードコーディングしてしまうと、その都度コードをメンテナンスをしなければならない。
+         *  DBのマスタから取得する場合、マスタがないと実行できない。
+         *  
+         */
+        
     }
 }
