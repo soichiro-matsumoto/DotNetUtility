@@ -25,5 +25,10 @@ namespace DotNetUtility
         /// 名称
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// 祝日の定義
+        /// </summary>
+        public string Definition { get; set; }
     }
 }
