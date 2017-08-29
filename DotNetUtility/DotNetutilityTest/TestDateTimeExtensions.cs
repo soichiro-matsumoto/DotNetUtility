@@ -72,6 +72,8 @@ namespace DotNetutilityTest
             var dtCase11 = new DateTime(2010, 11, 1);
             var dtCase12 = new DateTime(2010, 12, 1);
             var dtCase13 = new DateTime(2010, 12, 31);
+
+            // うるう年の2月
             var dtCase14 = new DateTime(2000, 2, 1);
 
             Assert.AreEqual(new DateTime(2010, 1, 31), dtCase1.MonthLastDay());
