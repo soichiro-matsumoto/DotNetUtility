@@ -41,7 +41,7 @@ namespace DotNetUtility
         /// </summary>
         /// <param name="zone">タイムゾーン</param>
         /// <returns>タイムゾーンの時刻</returns>
-        public static DateTime GetNow(TimeZone zone)
+        public static DateTime GetTimeZone(TimeZone zone)
         {
             if (zone == TimeZone.Local)
             {
