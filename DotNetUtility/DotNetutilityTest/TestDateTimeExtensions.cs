@@ -76,22 +76,22 @@ namespace DotNetutilityTest
             // うるう年の2月
             var dtCase14 = new DateTime(2000, 2, 1);
 
-            Assert.AreEqual(new DateTime(2010, 1, 31), dtCase1.MonthLastDay());
-            Assert.AreEqual(new DateTime(2010, 2, 28), dtCase2.MonthLastDay());
-            Assert.AreEqual(new DateTime(2010, 3, 31), dtCase3.MonthLastDay());
-            Assert.AreEqual(new DateTime(2010, 4, 30), dtCase4.MonthLastDay());
-            Assert.AreEqual(new DateTime(2010, 5, 31), dtCase5.MonthLastDay());
-            Assert.AreEqual(new DateTime(2010, 6, 30), dtCase6.MonthLastDay());
-            Assert.AreEqual(new DateTime(2010, 7, 31), dtCase7.MonthLastDay());
-            Assert.AreEqual(new DateTime(2010, 8, 31), dtCase8.MonthLastDay());
-            Assert.AreEqual(new DateTime(2010, 9, 30), dtCase9.MonthLastDay());
-            Assert.AreEqual(new DateTime(2010, 10, 31), dtCase10.MonthLastDay());
-            Assert.AreEqual(new DateTime(2010, 11, 30), dtCase11.MonthLastDay());
-            Assert.AreEqual(new DateTime(2010, 12, 31), dtCase12.MonthLastDay());
-            Assert.AreEqual(new DateTime(2010, 12, 31), dtCase13.MonthLastDay());
+            Assert.AreEqual(new DateTime(2010, 1, 31), dtCase1.LastDayOfMonth());
+            Assert.AreEqual(new DateTime(2010, 2, 28), dtCase2.LastDayOfMonth());
+            Assert.AreEqual(new DateTime(2010, 3, 31), dtCase3.LastDayOfMonth());
+            Assert.AreEqual(new DateTime(2010, 4, 30), dtCase4.LastDayOfMonth());
+            Assert.AreEqual(new DateTime(2010, 5, 31), dtCase5.LastDayOfMonth());
+            Assert.AreEqual(new DateTime(2010, 6, 30), dtCase6.LastDayOfMonth());
+            Assert.AreEqual(new DateTime(2010, 7, 31), dtCase7.LastDayOfMonth());
+            Assert.AreEqual(new DateTime(2010, 8, 31), dtCase8.LastDayOfMonth());
+            Assert.AreEqual(new DateTime(2010, 9, 30), dtCase9.LastDayOfMonth());
+            Assert.AreEqual(new DateTime(2010, 10, 31), dtCase10.LastDayOfMonth());
+            Assert.AreEqual(new DateTime(2010, 11, 30), dtCase11.LastDayOfMonth());
+            Assert.AreEqual(new DateTime(2010, 12, 31), dtCase12.LastDayOfMonth());
+            Assert.AreEqual(new DateTime(2010, 12, 31), dtCase13.LastDayOfMonth());
 
             // うるう年検証
-            Assert.AreEqual(new DateTime(2000, 2, 29), dtCase14.MonthLastDay());
+            Assert.AreEqual(new DateTime(2000, 2, 29), dtCase14.LastDayOfMonth());
             
         }
     }

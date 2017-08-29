@@ -61,11 +61,21 @@ namespace DotNetUtility
         }
         
         /// <summary>
+        /// 月初日を取得する
+        /// </summary>
+        /// <param name="dt">DateTime</param>
+        /// <returns>月初日指定されたDateTime</returns>
+        public static DateTime FirstDayOfMonth(this DateTime dt)
+        {
+            return new DateTime(dt.Year, dt.Month, 1);
+        } 
+
+        /// <summary>
         /// 月末日を取得する
         /// </summary>
-        /// <param name="dt"></param>
+        /// <param name="dt">DateTime</param>
         /// <returns>月末日指定されたDateTime</returns>
-        public static DateTime MonthLastDay(this DateTime dt)
+        public static DateTime LastDayOfMonth(this DateTime dt)
         {
             var days = DateTime.DaysInMonth(dt.Year, dt.Month);
             return new DateTime(dt.Year, dt.Month, days);
