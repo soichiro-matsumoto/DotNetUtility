@@ -94,5 +94,45 @@ namespace DotNetutilityTest
             Assert.AreEqual(new DateTime(2000, 2, 29), dtCase14.LastDayOfMonth());
             
         }
+
+        /// <summary>
+        /// Test Holiday Constructor
+        /// </summary>
+        [TestMethod]
+        public void TestHolidayConstructor()
+        {
+            //// 2016年
+            var SeizinNoHi2016 = new Holiday("成人の日", HolidayKind.NationalHoliday, 2016, 1, 2, DayOfWeek.Monday);
+            var UmiNoHi2016 = new Holiday("海の日", HolidayKind.NationalPublicHoliday, 2016, 7, 3, DayOfWeek.Monday);
+            var KeirouNoHi2016 = new Holiday("敬老の日", HolidayKind.NationalPublicHoliday, 2016, 9, 3, DayOfWeek.Monday);
+            var TaiikuNoHi2016 = new Holiday("体育の日", HolidayKind.NationalPublicHoliday, 2016, 10, 2, DayOfWeek.Monday);
+
+            Assert.AreEqual(new DateTime(2016, 1, 11), SeizinNoHi2016.Date);
+            Assert.AreEqual(new DateTime(2016, 7, 18), UmiNoHi2016.Date);
+            Assert.AreEqual(new DateTime(2016, 9, 19), KeirouNoHi2016.Date);
+            Assert.AreEqual(new DateTime(2016, 10, 10), TaiikuNoHi2016.Date);
+
+            //// 2017年
+            var SeizinNoHi2017 = new Holiday("成人の日", HolidayKind.NationalHoliday, 2017, 1, 2, DayOfWeek.Monday);
+            var UmiNoHi2017 = new Holiday("海の日", HolidayKind.NationalPublicHoliday, 2017, 7, 3, DayOfWeek.Monday);
+            var KeirouNoHi2017 = new Holiday("敬老の日", HolidayKind.NationalPublicHoliday, 2017, 9, 3, DayOfWeek.Monday);
+            var TaiikuNoHi2017 = new Holiday("体育の日", HolidayKind.NationalPublicHoliday, 2017, 10, 2, DayOfWeek.Monday);
+
+            Assert.AreEqual(new DateTime(2017, 1, 9), SeizinNoHi2017.Date);
+            Assert.AreEqual(new DateTime(2017, 7, 17), UmiNoHi2017.Date);
+            Assert.AreEqual(new DateTime(2017, 9, 18), KeirouNoHi2017.Date);
+            Assert.AreEqual(new DateTime(2017, 10, 9), TaiikuNoHi2017.Date);
+
+            //// 2018年
+            var SeizinNoHi2018 = new Holiday("成人の日", HolidayKind.NationalHoliday, 2018, 1, 2, DayOfWeek.Monday);
+            var UmiNoHi2018 = new Holiday("海の日", HolidayKind.NationalPublicHoliday, 2018, 7, 3, DayOfWeek.Monday);
+            var KeirouNoHi2018 = new Holiday("敬老の日", HolidayKind.NationalPublicHoliday, 2018, 9, 3, DayOfWeek.Monday);
+            var TaiikuNoHi2018 = new Holiday("体育の日", HolidayKind.NationalPublicHoliday, 2018, 10, 2, DayOfWeek.Monday);
+
+            Assert.AreEqual(new DateTime(2018, 1, 8), SeizinNoHi2018.Date);
+            Assert.AreEqual(new DateTime(2018, 7, 16), UmiNoHi2018.Date);
+            Assert.AreEqual(new DateTime(2018, 9, 17), KeirouNoHi2018.Date);
+            Assert.AreEqual(new DateTime(2018, 10, 8), TaiikuNoHi2018.Date);
+        }
     }
 }
