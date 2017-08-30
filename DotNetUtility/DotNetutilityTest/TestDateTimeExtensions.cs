@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DotNetUtility;
+using System.Linq;
 
 namespace DotNetutilityTest
 {
@@ -133,6 +134,19 @@ namespace DotNetutilityTest
             Assert.AreEqual(new DateTime(2018, 7, 16), UmiNoHi2018.Date);
             Assert.AreEqual(new DateTime(2018, 9, 17), KeirouNoHi2018.Date);
             Assert.AreEqual(new DateTime(2018, 10, 8), TaiikuNoHi2018.Date);
+        }
+
+        /// <summary>
+        /// Test Holiday Create
+        /// </summary>
+        [TestMethod]
+        public void TestHolidayCreate()
+        {
+            int year = 2017;
+            int springEquinoxDay = 21;
+            int autumnalEquinoxDay = 23;
+
+            var holidays = Holiday.Create(year, springEquinoxDay, autumnalEquinoxDay);
         }
     }
 }
