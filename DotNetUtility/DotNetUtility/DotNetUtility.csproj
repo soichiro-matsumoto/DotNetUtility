@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="Attribute\ExDisplayNameAttribute.cs" />
     <Compile Include="Attribute\ExDisplayNameAttributeExtensions.cs" />
+    <Compile Include="Holiday.cs" />
+    <Compile Include="HolidayKind.cs" />
     <Compile Include="IEnumerableExtensions.cs" />
     <Compile Include="IQueryableExtensions.cs" />
     <Compile Include="ObjectExtensions.cs" />
