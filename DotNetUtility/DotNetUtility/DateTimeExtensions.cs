@@ -13,6 +13,22 @@ namespace DotNetUtility
     public static class DateTimeExtensions
     {
         /// <summary>
+        /// 開始月を指定して、年度（西暦）を取得する
+        /// </summary>
+        /// <param name="dateTime">検証日付</param>
+        /// <param name="startMonth">年度開始月</param>
+        /// <returns>年度（西暦）</returns>
+        public static int GetFiscalYear(this DateTime dateTime, int startMonth)
+        {
+            if (dateTime.Month < startMonth)
+            {
+                return dateTime.Year - 1;
+            }
+
+            return dateTime.Year;
+        }
+
+        /// <summary>
         /// タイムゾーンを指定して時刻を取得する
         /// </summary>
         /// <param name="zone">タイムゾーン</param>
@@ -61,11 +77,21 @@ namespace DotNetUtility
         }
         
         /// <summary>
+        /// 月初日を取得する
+        /// </summary>
+        /// <param name="dt">DateTime</param>
+        /// <returns>月初日指定されたDateTime</returns>
+        public static DateTime FirstDayOfMonth(this DateTime dt)
+        {
+            return new DateTime(dt.Year, dt.Month, 1);
+        } 
+
+        /// <summary>
         /// 月末日を取得する
         /// </summary>
-        /// <param name="dt"></param>
+        /// <param name="dt">DateTime</param>
         /// <returns>月末日指定されたDateTime</returns>
-        public static DateTime MonthLastDay(this DateTime dt)
+        public static DateTime LastDayOfMonth(this DateTime dt)
         {
             var days = DateTime.DaysInMonth(dt.Year, dt.Month);
             return new DateTime(dt.Year, dt.Month, days);
