@@ -12,6 +12,25 @@ namespace DotNetutilityTest
     public class TestDateTimeExtensions
     {
         /// <summary>
+        /// Test GetFisicalYear
+        /// </summary>
+        [TestMethod]
+        public void TestGetFiscalYear()
+        {
+            int startMonth = 4;
+
+            var dtCase1 = new DateTime(2017, 4, 1);
+            var dtCase2 = new DateTime(2017, 3, 31);
+            var dtCase3 = new DateTime(2017, 12, 31);
+            var dtCase4 = new DateTime(2017, 1, 1);
+
+            Assert.AreEqual(2017, dtCase1.GetFiscalYear(startMonth));
+            Assert.AreEqual(2016, dtCase2.GetFiscalYear(startMonth));
+            Assert.AreEqual(2017, dtCase3.GetFiscalYear(startMonth));
+            Assert.AreEqual(2016, dtCase4.GetFiscalYear(startMonth));
+        }
+
+        /// <summary>
         /// Test GetTimeZone
         /// </summary>
         [TestMethod]
